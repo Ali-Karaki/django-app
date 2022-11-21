@@ -10,7 +10,9 @@
     <title>Django</title>
   </head>
   <body>
-    <h1 class="welcome">Hello {{name}} is {{age}} years old</h1>
+    {% for user in users %}
+    <h1 class="welcome">Hello {{user.name}} is {{user.age}} years old</h1>
+    {% endfor %}
     <form method="GET" action="counterGET">
       <textarea name="text" rows="10" cols="50"></textarea><br />
       <input type="submit" />

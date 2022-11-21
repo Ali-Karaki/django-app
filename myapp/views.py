@@ -1,14 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_protect
+from .models import User
 
 # Create your views here.
 
 
 def index(req):
+    rob = User("Rob", 40)
+    tod = User("Tod", 30)
+    users = [rob, tod]
     context = {
-        'name': "Robert",
-        'age': 83
+        "users": users
     }
     # return HttpResponse('<h1>Test Works</h1>') # before having templates
     # after creating templates

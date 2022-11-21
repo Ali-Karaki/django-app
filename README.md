@@ -47,10 +47,19 @@ python manage.py migrate
 - add line 125 in `settings.py` https://stackoverflow.com/questions/70285834/forbidden-403-csrf-verification-failed-request-aborted-reason-given-for-fail
 - no changes in URL, req.POST['textAreaName']
 
-
 # Static Files
 - add static files (css) in static `folder`
 - tell `settings.py` where to locate static files `STATICFILES_DIRS`
 - loading static files:
   - on top of page `{% load static %}`
   - `href="{% static 'style.css' %}"`
+
+# Data Models
+- define `class` in `models.py`
+- import in other files: `from .models import class`
+
+# for loop in template
+{% for item in array %} <html> {% endfor %}
+
+# if else in template
+{% if item.type == dog %} <html> {% else %} <html> {% endif %}
