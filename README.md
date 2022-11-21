@@ -35,3 +35,22 @@ python manage.py migrate
 - create `context` dict in `views.py`
 - pass context to `render()`
 - use {{}} in template
+
+# GET
+- define `CounterGET` function in `views.py`
+- define url for `CounterGET` (also called that) in `urls.py`
+- in `index.html`, on submit, call `action=CounterGET` which is our route
+- this method will send the content of the form in URL, req.GET['textAreaName']
+# POST
+- same logic as get
+- add `{% csrf_token %}` above form bcs of it's a POST function
+- add line 125 in `settings.py` https://stackoverflow.com/questions/70285834/forbidden-403-csrf-verification-failed-request-aborted-reason-given-for-fail
+- no changes in URL, req.POST['textAreaName']
+
+
+# Static Files
+- add static files (css) in static `folder`
+- tell `settings.py` where to locate static files `STATICFILES_DIRS`
+- loading static files:
+  - on top of page `{% load static %}`
+  - `href="{% static 'style.css' %}"`

@@ -1,12 +1,24 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel='stylesheet' href="{% static 'style.css' %}">
+    <title>Django</title>
   </head>
   <body>
-    <h1>Hello {{name}} is {{age}} years old</h1>
+    <h1 class="welcome">Hello {{name}} is {{age}} years old</h1>
+    <form method="GET" action="counterGET">
+      <textarea name="text" rows="10" cols="50"></textarea><br />
+      <input type="submit" />
+    </form>
+    <form method="POST" action="counterPOST">
+      {% csrf_token %}
+      <textarea name="text" rows="10" cols="50"></textarea><br />
+      <input type="submit" />
+    </form>
   </body>
 </html>
