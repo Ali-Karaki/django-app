@@ -5,3 +5,8 @@ pip install virtualenvwrapper-win
 mkvirtualenv myapp
 
 django-admin startproject myproject
+
+deactivate
+workon myapp
+
+python manage.py startapp myapp
